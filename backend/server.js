@@ -50,11 +50,13 @@ app.use("/uploads", express.static("uploads"));
 // Connect to DB first, then start the server
 //const PORT = process.env.PORT || 5000;
 
+// Use fallback if PORT is undefined
+const PORT = process.env.PORT || 8000;
+
 connectDB().then(() => {
-  app.listen(process.env.PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${process.env.PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
   });
-  
 }).catch((err) => {
   console.error("❌ Failed to connect to MongoDB:", err);
 });
