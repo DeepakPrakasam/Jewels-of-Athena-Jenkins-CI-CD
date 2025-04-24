@@ -11,6 +11,9 @@ RUN npm install
 # Copy the rest of the code
 COPY . .
 
+# ✅ Copy .env file explicitly
+COPY .env .env
+
 # Expose the internal port your app uses (4000 as per your .env)
 EXPOSE 4000
 

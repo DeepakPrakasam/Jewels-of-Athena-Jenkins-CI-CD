@@ -11,7 +11,7 @@ const Cart = () => {
     const payload = JSON.parse(atob(token.split('.')[1]));
     const userId = payload?.id;
 
-    fetch(`/api/cart/${userId}`, {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -34,7 +34,7 @@ const Cart = () => {
   const handleRemove = async (productId) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("/api/cart/remove", {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/remove`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

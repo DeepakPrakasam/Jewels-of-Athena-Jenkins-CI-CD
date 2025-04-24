@@ -12,7 +12,7 @@ const AdminViewProducts = () => {
 
   // Fetch products from the API
   const fetchProducts = () => {
-    fetch('/api/products')
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -34,7 +34,7 @@ const AdminViewProducts = () => {
   const handleDelete = (id) => {
     // Confirm the deletion
     if (window.confirm("Are you sure you want to delete this product?")) {
-      fetch(`/api/products/${id}`, {
+      fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`, {
         method: 'DELETE',
       })
         .then((res) => {
