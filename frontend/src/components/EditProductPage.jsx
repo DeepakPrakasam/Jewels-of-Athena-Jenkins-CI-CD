@@ -2,6 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditProductForm from "./EditProductForm";
 import Footer from "./Footer";
+import { URL } from '../../url';
+
 
 const EditProductPage = () => {
   const { id } = useParams();
@@ -12,7 +14,7 @@ const EditProductPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`)
+    fetch(`${URL}/api/products/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch product");
@@ -55,7 +57,7 @@ const EditProductPage = () => {
         formData.append(key, updatedData[key]);
       }
 
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`, {
+      const res = await fetch(`${URL}/api/products/${id}`, {
         method: "PUT",
         body: formData,
       });

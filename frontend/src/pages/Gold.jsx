@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { URL } from '../../url';
+
 const GoldPage = () => {
   const [goldItems, setGoldItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`)
+    fetch(`${URL}/api/products`)
       .then((res) => res.json()) 
       .then((data) => {
         console.log("Fetched goldItems =", data);

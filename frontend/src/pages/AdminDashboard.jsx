@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { url } from '../../url';
+
 import {
   Chart as ChartJS,
   CategoryScale,

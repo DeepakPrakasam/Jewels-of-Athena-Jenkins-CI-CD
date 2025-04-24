@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
+import { URL } from '../../url';
 
 
 const AdminViewProducts = () => {
@@ -12,7 +13,7 @@ const AdminViewProducts = () => {
 
   // Fetch products from the API
   const fetchProducts = () => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products`)
+    fetch(`${URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -34,7 +35,7 @@ const AdminViewProducts = () => {
   const handleDelete = (id) => {
     // Confirm the deletion
     if (window.confirm("Are you sure you want to delete this product?")) {
-      fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`, {
+      fetch(`${URL}/api/products/${id}`, {
         method: 'DELETE',
       })
         .then((res) => {

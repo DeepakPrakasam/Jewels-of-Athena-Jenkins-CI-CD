@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { URL } from '../../url';
 
 const Signup = ({ toastRef }) => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Signup = ({ toastRef }) => {
     }
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`, {
+      const res = await fetch(`${URL}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

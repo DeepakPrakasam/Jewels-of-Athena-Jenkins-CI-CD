@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "../components/Footer";
+import { URL } from '../../url';
 
 const AddProductForm = () => {
   // Form state
@@ -48,7 +49,7 @@ const AddProductForm = () => {
     try {
       const token = localStorage.getItem("token"); 
 
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/add-product`, {
+      const response = await fetch(`${URL}/api/admin/add-product`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

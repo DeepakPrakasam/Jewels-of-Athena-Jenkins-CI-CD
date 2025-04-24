@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import CategoryCard from '../components/CategoryCard';
 import FeaturedJewelry from '../components/FeaturedJewelry';
-
+import { URL } from '../../url';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`http://172.23.220.156:5000/api/categories`); 
+        const response = await fetch(`${URL}/api/categories`); 
         const data = await response.json();
         setCategories(data);
       } catch (error) {

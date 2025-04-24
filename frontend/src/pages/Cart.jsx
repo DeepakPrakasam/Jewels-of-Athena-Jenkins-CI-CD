@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { URL } from '../../url';
 
 const Cart = () => {
   const [items, setItems] = useState([]);
@@ -11,7 +12,7 @@ const Cart = () => {
     const payload = JSON.parse(atob(token.split('.')[1]));
     const userId = payload?.id;
 
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/${userId}`, {
+    fetch(`${URL}/api/cart/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -34,7 +35,7 @@ const Cart = () => {
   const handleRemove = async (productId) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/remove`, {
+      const res = await fetch(`${URL}/api/cart/remove`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

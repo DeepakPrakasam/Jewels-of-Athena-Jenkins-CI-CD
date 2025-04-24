@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import { URL } from '../../url';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const ProductDetail = () => {
   const isLoggedIn = !!localStorage.getItem("token");
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`)
+    fetch(`${URL}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -26,7 +27,7 @@ const ProductDetail = () => {
     if (!token) return alert("Please login first.");
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/add`, {
+      const res = await fetch(`${URL}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
