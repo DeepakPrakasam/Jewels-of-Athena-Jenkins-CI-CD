@@ -47,11 +47,9 @@ app.get("/api/categories", (req, res) => {
 app.use(express.static("../frontend/public"));
 app.use("/uploads", express.static("uploads"));
 
-// Connect to DB first, then start the server
-//const PORT = process.env.PORT || 5000;
 
 // Use fallback if PORT is undefined
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 
 connectDB().then(() => {
   app.listen(PORT, '0.0.0.0', () => {
