@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_API_BASE_URL,
+          target: 'http://backend-container:4000',
           changeOrigin: true,
           secure: false,
         }
