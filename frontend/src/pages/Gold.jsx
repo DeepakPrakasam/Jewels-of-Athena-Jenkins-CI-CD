@@ -52,7 +52,7 @@ const GoldPage = () => {
           <img
             src="/goldheader.webp"
             alt="Gold Collection"
-            className="img-fluid mt-3"
+            className="img-fluid mt-3 rounded-3"
           />
         </div>
 
