@@ -93,24 +93,15 @@ function Navbar({ toastRef }) {
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
-                    <strong>All Jewellery</strong>
+                    <strong>Home</strong>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/gold">
-                    <strong>Gold</strong>
+                    <strong>All Jewellery</strong>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/silver">
-                    <strong>Silver</strong>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="#">
-                    <strong>Platinum</strong>
-                  </Link>
-                </li>
+                
                 <li className="nav-item">
                   <Link className="nav-link" to="#">
                     <strong>Collections</strong>
@@ -141,12 +132,6 @@ function Navbar({ toastRef }) {
               >
                 {role !== "admin" && (
                   <>
-                    <li>
-                      <Link to="/orders" className="dropdown-item">
-                        <i className="fas fa-box-open me-2"></i>
-                        Order History
-                      </Link>
-                    </li>
                     <li>
                       <Link to="/cart" className="dropdown-item">
                         <i className="fas fa-shopping-cart me-2"></i>
